@@ -1,0 +1,35 @@
+{
+  "name": "soft-grey-theme",
+  "displayName": "Soft Grey Theme",
+  "description": "A dynamic UI colour theme based on the Atom One Dark/Light theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "atom",
+    "theme",
+    "colour-theme",
+    "dark",
+    "light",
+    "soft grey"
+  ],
+  "icon": "soft-grey-icon.png",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Soft Grey Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/soft-grey-dark.json"
+      },
+      {
+        "label": "Soft Grey Light",
+        "uiTheme": "vs",
+        "path": "./themes/soft-grey-light.json"
+      }
+    ]
+  }
+}
