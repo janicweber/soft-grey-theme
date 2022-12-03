@@ -1,0 +1,50 @@
+# This workflow will upload a Visual Studio Code Extension to the VS Code Marketplace
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Upload Visual Studio Code Extension
+
+on:
+  release:
+    types: [created]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 19
+
+      - name: Install the dependencies
+        run: npm i
+
+      - name: Install vsce
+        run: npm i -g vsce
+
+      - name: Publish
+        run: vsce publish -p ${{ secrets.VSCE_PAT }}
+
+# Alternative
+# jobs:
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 19
+  #     - run: npm ci
+  #     - name: Publish to Visual Studio Marketplace
+  #       uses: HaaLeo/publish-vscode-extension@v1
+  #       with:
+  #         pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+  #         registryUrl: https://marketplace.visualstudio.com
+  #     # - name: Publish to Open VSX Registry
+  #     #   uses: HaaLeo/publish-vscode-extension@v1
+  #     #   with:
+  #     #     pat: ${{ secrets.OPEN_VSX_TOKEN }}

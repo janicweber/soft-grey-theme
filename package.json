@@ -2,7 +2,7 @@
   "name": "soft-grey-theme",
   "displayName": "Soft Grey Theme",
   "description": "A dynamic UI colour theme based on the Atom One Dark/Light theme",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.73.0"
   },
